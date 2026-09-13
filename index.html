@@ -154,7 +154,7 @@ body{
 }
 .pano-image{
   position:absolute;width:130vw;height:130vh;object-fit:cover;
-  opacity:0.28;mix-blend-mode:screen;filter:contrast(145%) brightness(90%) hue-rotate(185deg);
+  opacity:0.32;filter:saturate(95%) brightness(65%);
   transform-origin:center center;transition:transform 0.1s linear, filter 0.3s ease;
 }
 .film{
@@ -163,7 +163,7 @@ body{
 }
 .vignette{
   position:fixed;inset:0;z-index:2;pointer-events:none;
-  background:radial-gradient(ellipse at center,transparent 45%,rgba(2,8,18,.9) 100%);
+  background:linear-gradient(180deg,rgba(6,15,32,.55) 0%,rgba(6,15,32,.66) 100%),radial-gradient(ellipse at center,transparent 40%,rgba(2,8,18,.9) 100%);
 }
 main{position:relative;z-index:3}
 
@@ -767,7 +767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <div id="xray-container" aria-hidden="true">
-  <img id="pano-bg" class="pano-image" src="assets/pano-xray.jpg" alt="">
+  <img id="pano-bg" class="pano-image" src="assets/operatory.jpg" alt="">
 </div>
 
 <div class="film" aria-hidden="true"></div>
@@ -963,16 +963,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
-
-  <!-- OPERATORY PHOTO BAND -->
-  <figure class="operatory-band reveal">
-    <img src="assets/operatory.jpg" alt="A clean, modern treatment room at Smile Services of New York — Urgent Care Dental in Manhasset" loading="lazy" decoding="async" width="1320" height="505">
-    <div class="ob-scrim"></div>
-    <figcaption class="ob-caption">
-      <p class="ob-eyebrow">Where You'll Be Seen</p>
-      <p class="ob-title">A real chair, a real lab, a real plan — same day.</p>
-    </figcaption>
-  </figure>
 
   <!-- 3 · THE NERVE -->
   <section data-depth="nerve">
