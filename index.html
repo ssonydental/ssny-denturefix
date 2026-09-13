@@ -167,6 +167,38 @@ body{
 }
 main{position:relative;z-index:3}
 
+/* ---------- operatory photo band ---------- */
+.operatory-band{
+  position:relative;width:100%;margin:0;padding:0;overflow:hidden;
+  background:var(--navy);line-height:0;
+}
+.operatory-band img{
+  display:block;width:100%;height:clamp(240px,42vw,520px);
+  object-fit:cover;object-position:center 42%;
+}
+.operatory-band .ob-scrim{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(11,29,58,.72) 0%,rgba(11,29,58,.34) 42%,rgba(11,29,58,0) 68%);
+}
+.operatory-band .ob-caption{
+  position:absolute;left:clamp(20px,5vw,64px);top:50%;transform:translateY(-50%);
+  max-width:30ch;z-index:2;line-height:1.3;
+}
+.operatory-band .ob-eyebrow{
+  font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--lavender);margin:0 0 10px;font-weight:600;
+}
+.operatory-band .ob-title{
+  font-family:'Playfair Display',Georgia,serif;font-weight:600;
+  font-size:clamp(1.3rem,3vw,2rem);color:#fff;margin:0;
+}
+@media (max-width:640px){
+  .operatory-band .ob-scrim{
+    background:linear-gradient(180deg,rgba(11,29,58,.30) 0%,rgba(11,29,58,.66) 100%);
+  }
+  .operatory-band .ob-caption{top:auto;bottom:18px;transform:none;max-width:26ch}
+}
+
 /* ---------- top bar ---------- */
 .topbar{
   position:fixed;top:0;left:0;right:0;z-index:10;
@@ -931,6 +963,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+
+  <!-- OPERATORY PHOTO BAND -->
+  <figure class="operatory-band reveal">
+    <img src="assets/operatory.jpg" alt="A clean, modern treatment room at Smile Services of New York — Urgent Care Dental in Manhasset" loading="lazy" decoding="async" width="1320" height="505">
+    <div class="ob-scrim"></div>
+    <figcaption class="ob-caption">
+      <p class="ob-eyebrow">Where You'll Be Seen</p>
+      <p class="ob-title">A real chair, a real lab, a real plan — same day.</p>
+    </figcaption>
+  </figure>
 
   <!-- 3 · THE NERVE -->
   <section data-depth="nerve">
