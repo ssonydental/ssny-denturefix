@@ -28,22 +28,18 @@
 <meta name="twitter:image" content="https://repair.ssonydental.com/assets/operatory.jpg">
 <meta name="twitter:description" content="Broken, cracked, or loose denture? Denture assessment in Manhasset. Repaired when possible, replaced fast when it can't be. Call (516) 500-7400.">
 
-<!-- Consent defaults: advertising storage DENIED until the visitor accepts. -->
+<!-- Consent default (belt-and-suspenders alongside the GTM Consent Default tag).
+     Keep these GRANTED: defaulting ad_storage to 'denied' stopped Google Ads
+     conversions from 9/19 to 10/1. No cookie banner on this page. -->
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'granted',
-  wait_for_update: 500
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+  analytics_storage: 'granted'
 });
-try{
-  if (localStorage.getItem('ssny-consent') === 'granted'){
-    gtag('consent', 'update', {ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted'});
-  }
-}catch(e){}
 </script>
 
 <!-- Google Tag Manager -->
@@ -103,10 +99,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {"@type": "MedicalProcedure", "name": "Denture Repair Consultation"}
       ],
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:30", "closes": "17:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "22:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "06:30", "closes": "17:00"}
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "06:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "06:30", "closes": "17:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "13:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "19:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "06:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:00", "closes": "22:00"}
       ],
       "potentialAction": {
         "@type": "ReserveAction",
@@ -128,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {"@type": "Question", "name": "Should I try to glue my denture back together myself?", "acceptedAnswer": {"@type": "Answer", "text": "It's best not to. Household and store-bought glues can warp the fit, are hard to reverse, and often make a proper repair harder. Keep all the pieces, bring them in, and let us assess it. That gives you the best chance at a clean repair."}},
         {"@type": "Question", "name": "What happens if my denture can't be repaired?", "acceptedAnswer": {"@type": "Answer", "text": "Some dentures are too worn or broken to repair well. If that's the case, we'll tell you honestly and start a replacement through our lab, usually about a one-week turnaround, so you're not left guessing."}},
         {"@type": "Question", "name": "My denture doesn't hurt, it just won't stay in. Is that worth a visit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A loose or slipping denture usually means the fit has changed and often needs a reline rather than a full replacement. Getting it assessed early is cheaper and easier than waiting until it cracks or causes sores."}},
-        {"@type": "Question", "name": "What are your hours?", "acceptedAnswer": {"@type": "Answer", "text": "Friday 9:30am to 5pm, Saturday 8am to 10pm, Sunday 9am to 5pm, and Monday 6:30am to 5pm. Tuesday, Wednesday and Thursday are by appointment only. Denture repair visits are scheduled, so book online or call for a time."}},
+        {"@type": "Question", "name": "What are your hours?", "acceptedAnswer": {"@type": "Answer", "text": "Open 7 days a week. Saturday 6am to 10pm, Sunday 6am to 10pm, Monday 6:30am to 5pm, Tuesday 10am to 1pm, Wednesday 10am to 7pm, Thursday 6am to 10pm, and Friday 6am to 10pm. Denture repair visits are scheduled, so book online or call for a time."}},
         {"@type": "Question", "name": "What if I can't pay for treatment right now?", "acceptedAnswer": {"@type": "Answer", "text": "Cost shouldn't keep you stuck without a working denture. We offer 0% financing for all credit types, so you can get seen and handle payment over time."}}
       ]
     }
@@ -557,7 +556,8 @@ footer .fcol a:focus-visible,.callbar a:focus-visible,.lede a:focus-visible,.sym
   .review-grid > .review:nth-child(2){margin-top:30px}
   .review-grid > .review:nth-child(3){margin-top:60px}
   .visit-facts .fact-card{box-shadow:0 10px 26px rgba(11,29,58,.07)}
-  #book .book-frame{height:720px}
+  #book .book-card{max-width:1040px}
+  #book .book-frame{height:900px}
   .brand-strip{gap:clamp(28px,6vw,64px);padding:48px 40px}
   .brand-strip img{height:100px;width:100px}
   footer{padding:52px clamp(40px,6vw,80px) 64px}
@@ -586,7 +586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wordmark">Smile Services <span>of New York</span><span class="subname"><span class="u1">Urgent Care</span> <span class="u2">Dental</span> <span class="u1">Denture Repair</span></span></div>
   </div>
   <div class="topbar-actions">
-    <span class="status" id="open-status" aria-live="polite"><span id="open-status-text">Open Friday to Monday</span></span>
+    <span class="status" id="open-status" aria-live="polite"><span id="open-status-text">Open 7 Days a Week</span></span>
     <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar">Call (516) 500-7400</a>
     <a class="book-pill" href="#book" data-track="book" data-loc="topbar">Book Online</a>
   </div>
@@ -975,7 +975,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </details>
         <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What are your hours?</summary>
-          <p class="answer">Friday 9:30am to 5pm, Saturday 8am to 10pm, Sunday 9am to 5pm, and Monday 6:30am to 5pm. Tuesday, Wednesday and Thursday are by appointment only. Denture repair visits are scheduled, so book online or call for a time.</p>
+          <p class="answer">Open 7 days a week. Saturday 6am to 10pm, Sunday 6am to 10pm, Monday 6:30am to 5pm, Tuesday 10am to 1pm, Wednesday 10am to 7pm, Thursday 6am to 10pm, and Friday 6am to 10pm. Denture repair visits are scheduled, so book online or call for a time.</p>
         </details>
         <details class="faq-item">
           <summary><span class="mark" aria-hidden="true">+</span>What if I can't pay for treatment right now?</summary>
@@ -1005,13 +1005,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="fact-card">
             <span class="k">Hours</span>
             <div class="hours-list" id="hours-list">
-              <div data-day="5"><span>Friday</span><span>9:30am &ndash; 5pm</span></div>
-              <div data-day="6"><span>Saturday</span><span>8:00am &ndash; 10pm</span></div>
-              <div data-day="0"><span>Sunday</span><span>9:00am &ndash; 5pm</span></div>
+              <div data-day="6"><span>Saturday</span><span>6:00am &ndash; 10pm</span></div>
+              <div data-day="0"><span>Sunday</span><span>6:00am &ndash; 10pm</span></div>
               <div data-day="1"><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
-              <div data-day="2" data-closed="true"><span>Tuesday</span><span>By Appointment Only</span></div>
-              <div data-day="3" data-closed="true"><span>Wednesday</span><span>By Appointment Only</span></div>
-              <div data-day="4" data-closed="true"><span>Thursday</span><span>By Appointment Only</span></div>
+              <div data-day="2"><span>Tuesday</span><span>10:00am &ndash; 1pm</span></div>
+              <div data-day="3"><span>Wednesday</span><span>10:00am &ndash; 7pm</span></div>
+              <div data-day="4"><span>Thursday</span><span>6:00am &ndash; 10pm</span></div>
+              <div data-day="5"><span>Friday</span><span>6:00am &ndash; 10pm</span></div>
             </div>
           </div>
         </div>
@@ -1081,13 +1081,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="fcol">
       <span class="fh">Hours</span>
       <div class="fhours">
-        <div><span>Friday</span><span>9:30am &ndash; 5pm</span></div>
-        <div><span>Saturday</span><span>8:00am &ndash; 10pm</span></div>
-        <div><span>Sunday</span><span>9:00am &ndash; 5pm</span></div>
+        <div><span>Saturday</span><span>6:00am &ndash; 10pm</span></div>
+        <div><span>Sunday</span><span>6:00am &ndash; 10pm</span></div>
         <div><span>Monday</span><span>6:30am &ndash; 5pm</span></div>
-        <div class="fclosed"><span>Tuesday</span><span>By Appointment Only</span></div>
-        <div class="fclosed"><span>Wednesday</span><span>By Appointment Only</span></div>
-        <div class="fclosed"><span>Thursday</span><span>By Appointment Only</span></div>
+        <div><span>Tuesday</span><span>10:00am &ndash; 1pm</span></div>
+        <div><span>Wednesday</span><span>10:00am &ndash; 7pm</span></div>
+        <div><span>Thursday</span><span>6:00am &ndash; 10pm</span></div>
+        <div><span>Friday</span><span>6:00am &ndash; 10pm</span></div>
       </div>
     </div>
   </div>
@@ -1099,31 +1099,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="callbar"><div class="callbar-inner"><a class="cb-book" href="#book" data-track="book" data-loc="sticky_bar">Book Online</a><a class="cb-call" href="tel:5165007400" data-track="call" data-loc="sticky_bar">Tap to Call</a></div></div>
 
-<div class="consent" id="consent" role="region" aria-label="Cookie consent">
-  <div class="consent-inner">
-    <p>We use cookies to run this site and, with your permission, to measure our advertising. Advertising cookies stay off until you accept.</p>
-    <div class="consent-actions">
-      <button type="button" id="consent-decline">Decline</button>
-      <button type="button" class="primary" id="consent-accept">Accept</button>
-    </div>
-  </div>
-</div>
-
 <script>
 /* Reveal fail-open registered FIRST, before anything that could throw. */
 setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 2500);
 
 (function(){
-  window.dataLayer = window.dataLayer || [];
-  function track(event, params){
-    dataLayer.push(Object.assign({event: event}, params || {}));
-  }
 
   /* ---------- live open / closed status (America/New_York) ---------- */
   /* 0=Sun … 6=Sat. open/close in minutes from midnight; null = closed */
   var HOURS = {
-    0: [540, 1020], 1: [390, 1020], 2: null, 3: null, 4: null,
-    5: [570, 1020], 6: [480, 1320]
+    0: [360, 1320], 1: [390, 1020], 2: [600, 780], 3: [600, 1140],
+    4: [360, 1320], 5: [360, 1320], 6: [360, 1320]
   };
   var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
@@ -1144,7 +1130,7 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
     var hh = h % 12; if (hh === 0) hh = 12;
     return hh + (m ? ':' + String(m).padStart(2,'0') : '') + ap;
   }
-  function nextWalkIn(fromDay){
+  function nextOpen(fromDay){
     for (var i = 1; i <= 7; i++){
       var d = (fromDay + i) % 7;
       if (HOURS[d]) return {day: d, opens: HOURS[d][0]};
@@ -1167,8 +1153,8 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
       txt.textContent = 'Closed. Opens today ' + fmt(today[0]);
     } else {
       el.setAttribute('data-state','closed');
-      var n2 = nextWalkIn(now.day);
-      txt.textContent = 'By appointment only today. Open ' + DAY_NAMES[n2.day] + ' ' + fmt(n2.opens);
+      var n2 = nextOpen(now.day);
+      txt.textContent = 'Closed now. Opens ' + DAY_NAMES[n2.day] + ' ' + fmt(n2.opens);
     }
 
     var list = document.getElementById('hours-list');
@@ -1203,8 +1189,8 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
     } else if (today && now.mins < today[0]){
       el.innerHTML = 'We open at <span class="now-time">' + fmt12(today[0]) + '</span> today. Book online any time, or call once we open.';
     } else {
-      var n = nextWalkIn(now.day);
-      el.innerHTML = 'Today is <span class="now-time">by appointment only</span>. Call and we\u2019ll find you a time. Regular hours resume ' + DAY_NAMES[n.day] + ' at ' + fmt12(n.opens) + '.';
+      var n = nextOpen(now.day);
+      el.innerHTML = 'We\u2019re closed for the day. We open <span class="now-time">' + DAY_NAMES[n.day] + ' at ' + fmt12(n.opens) + '</span>. Book online now and we\u2019ll have a time ready for you.';
     }
   }
   function tick(){
@@ -1286,37 +1272,16 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
   sbw();
   window.addEventListener('resize', sbw);
 
-  /* ---------- consent banner: deferred to first scroll or ~2s ---------- */
-  var banner = document.getElementById('consent');
-  var stored = null;
-  try { stored = localStorage.getItem('ssny-consent'); } catch(e){}
-  if (banner && !stored){
-    var shown = false;
-    var showBanner = function(){
-      if (shown) return;
-      shown = true;
-      window.removeEventListener('scroll', showBanner);
-      banner.classList.add('show');
-    };
-    window.addEventListener('scroll', showBanner, {passive:true, once:true});
-    setTimeout(showBanner, 2000);
-  }
-  function setConsent(value){
-    try { localStorage.setItem('ssny-consent', value); } catch(e){}
-    if (window.gtag){
-      gtag('consent', 'update', {
-        ad_storage: value === 'granted' ? 'granted' : 'denied',
-        ad_user_data: value === 'granted' ? 'granted' : 'denied',
-        ad_personalization: value === 'granted' ? 'granted' : 'denied'
-      });
-    }
-    track('consent_' + (value === 'granted' ? 'accepted' : 'declined'), {});
-    if (banner) banner.classList.remove('show');
-  }
-  var acceptBtn = document.getElementById('consent-accept');
-  var declineBtn = document.getElementById('consent-decline');
-  if (acceptBtn) acceptBtn.addEventListener('click', function(){ setConsent('granted'); });
-  if (declineBtn) declineBtn.addEventListener('click', function(){ setConsent('denied'); });
+})();
+</script>
+<script>
+/* Page-wide helper: any script on the page may call track('event_name', {...}). */
+window.dataLayer = window.dataLayer || [];
+function track(event, params){
+  window.dataLayer.push(Object.assign({event: event}, params || {}));
+}
+window.track = track;
+(function(){
 
   /* ---------- click tracking ---------- */
   document.addEventListener('click', function(e){
@@ -1341,9 +1306,14 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
      service NAME, which would describe the patient's condition. */
   var JARVIS_ORIGIN = 'https://schedule.jarvisanalytics.com';
   var bookingFired = {};
+  /* Add ?jarvisdebug to the URL to print every Jarvis message in the console. */
+  var JDEBUG = /[?&]jarvisdebug/.test(location.search);
   window.addEventListener('message', function(e){
     if (e.origin !== JARVIS_ORIGIN) return;
     var d = e.data;
+    /* Jarvis may post the payload as a JSON string instead of an object. */
+    if (typeof d === 'string'){ try { d = JSON.parse(d); } catch(err){ d = null; } }
+    if (JDEBUG && window.console) console.log('[jarvis msg]', JSON.stringify(e.data));
     if (!d || typeof d !== 'object' || d.event !== 'scheduling-success') return;
     var uid = d['gtm.uniqueEventId'];
     if (uid != null){
@@ -1351,7 +1321,10 @@ setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 
       bookingFired[uid] = true;
     }
     var svc = d.service || {};
-    track('appointment_booked', {
+    /* Event name MUST stay 'jarvis_booking_confirmed': the GTM Custom Event
+       trigger for the GA4 booking_confirmed tag and the Google Ads
+       "Booking Confirmed" conversion listens for exactly this name. */
+    track('jarvis_booking_confirmed', {
       booking_service_id: svc.id || '',
       booking_location_id: (d.location && d.location.location_id) || d.locationID || ''
     });
