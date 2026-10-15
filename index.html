@@ -161,7 +161,12 @@ main{position:relative;overflow-x:clip}
 .wordmark .subname .u2{color:var(--secondary)}
 .sm-mark{font-size:.36em;vertical-align:baseline;line-height:0;margin-left:1px;font-weight:600;opacity:.8}
 .topbar-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.call-pill,.book-pill{display:none}
+.call-pill,.book-pill{display:inline-flex;align-items:center;min-height:40px;font-family:'Archivo',sans-serif;font-weight:600;font-size:.76rem;padding:8px 12px;border-radius:100px;text-decoration:none;white-space:nowrap;color:#fff}
+.call-pill{background:var(--accent);border:1px solid transparent}
+.book-pill{background:var(--secondary);border:1px solid var(--secondary)}
+.topbar-actions{gap:6px}
+.pill-long{display:none}
+@media (min-width:700px){.pill-long{display:inline}.pill-short{display:none}}
 .status{
   font-family:'Archivo',sans-serif;font-size:.875rem;font-weight:600;line-height:1.3;
   color:#6B7B91;text-align:right;
@@ -212,12 +217,50 @@ h2{font-size:1.65rem;margin-bottom:14px}
 }
 
 /* ---------- hero: the only thing that matters at 390px ---------- */
-section[data-depth="hero"]{padding:84px 20px 34px}
-.hero-kicker{
-  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;letter-spacing:normal;
-  color:var(--secondary);margin-bottom:12px;line-height:1.3;
-}
-h1{font-size:2.05rem;font-weight:700;letter-spacing:-.015em;line-height:1.12;margin-bottom:16px}
+section[data-depth="hero"]{padding:88px 20px 28px;background:#0B4F72;border-bottom:1px solid var(--rule)}
+section[data-depth="hero"] h1{color:#fff}
+section[data-depth="hero"] .hero-kicker{display:inline-block;background:var(--accent);color:#fff;font-size:.88rem;padding:9px 16px;border-radius:5px;margin-bottom:16px}
+section[data-depth="hero"] .danger{color:var(--accent)}
+section[data-depth="hero"] .hero-sub{color:#fff;font-weight:700;font-size:1.15rem}
+section[data-depth="hero"] .btn-call{box-shadow:0 1px 2px rgba(0,0,0,.2)}
+section[data-depth="hero"] .btn-ghost{background:#fff;color:var(--secondary);border-color:#fff}
+section[data-depth="hero"] .btn-ghost:hover{background:var(--wash);color:var(--secondary)}
+section[data-depth="hero"] .trust-row{color:rgba(255,255,255,.9)}
+section[data-depth="hero"] .trust-row .dot{color:rgba(255,255,255,.5)}
+@media (max-width:699px){section[data-depth="hero"] .copy{text-align:center}section[data-depth="hero"] .hero-sub{margin-left:auto;margin-right:auto}}
+.hero-kicker{font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;line-height:1.3}
+.hero-sub{font-size:1rem;line-height:1.5;color:var(--ink-faint);margin:0 0 20px;text-wrap:pretty}
+.trust-row{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:10px;margin:16px 0 0;font-size:.9rem;font-weight:500;line-height:1;color:var(--ink-faint);white-space:nowrap}
+@media (max-width:699px){.trust-row{justify-content:center}}
+.trust-row > span{display:inline-flex;align-items:center;height:16px}
+.trust-row .dot{color:#B7C0CC}
+.trust-row .tr-stars{gap:5px}
+.trust-row .tr-stars .stars{display:inline-flex;align-items:center;gap:1px}
+.trust-row .tr-stars svg{width:13px;height:13px;display:block}
+.trust-row .tr-stars svg.g{width:15px;height:15px}
+@media (max-width:359px){.trust-row{font-size:.74rem;gap:6px}}
+.hero-cards{display:flex;flex-direction:column;gap:24px;padding:28px 20px 0}
+.hcard{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px 20px;box-shadow:0 2px 8px rgba(11,29,58,.04);display:flex;flex-direction:column;gap:14px}
+@media (max-width:699px){.hero-cards .hcard:first-child{order:2}.hero-cards .hcard:last-child{order:1}}
+.hcard h2{font-size:1.12rem;margin:0}
+.hcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:space-evenly;flex:1;gap:12px;font-size:.98rem;color:var(--ink-soft);line-height:1.45}
+.hcard li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
+.hcard li svg{width:20px;height:20px;flex:0 0 auto;margin-top:1px}
+.hcard .muted{font-size:.8rem;color:#6B7B91;margin:0}
+.hcard .addr{display:flex;gap:10px;align-items:flex-start;font-style:normal;font-size:.92rem;line-height:1.45;color:var(--ink-soft)}
+.hcard .addr svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px;fill:var(--secondary)}
+.hcard .addr span{display:flex;flex-direction:column;gap:2px}
+.hcard .addr b{font-weight:400;color:var(--ink-soft)}
+.hcard .addr small{font-size:.82rem;font-weight:700;color:var(--ink)}
+.hcard .park{display:flex;gap:10px;align-items:center;font-size:.92rem;color:var(--ink-soft)}
+.hcard .park svg{width:18px;height:18px;flex:0 0 auto}
+.hcard .dir{align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font-size:.9rem;font-weight:600;color:var(--secondary);text-decoration:underline;text-underline-offset:3px}
+@media (min-width:700px){.hero-cards{flex-direction:row;padding:32px 40px 0;max-width:1240px}.hcard{flex:1}}
+@media (min-width:1041px){.hero-cards{padding:36px clamp(40px,6vw,80px) 0}}
+.callbar{opacity:0;transform:translateY(100%);pointer-events:none;transition:opacity .3s,transform .3s}
+.callbar.show{opacity:1;transform:none;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.callbar{transition:none}}
+h1{font-size:2.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.08;margin-bottom:12px;text-wrap:balance}
 .price-badge{display:block;margin:0 0 18px;padding:15px 17px;border-radius:12px;border:1px solid var(--rule);background:var(--wash)}
 .price-badge .amount{font-family:'Playfair Display',serif;font-weight:700;font-size:1.45rem;color:var(--ink);line-height:1.15;display:block}
 .price-badge .amount em{font-style:normal;font-family:'Archivo',sans-serif;font-size:.54em;font-weight:600;color:var(--secondary)}
@@ -232,28 +275,30 @@ h1{font-size:2.05rem;font-weight:700;letter-spacing:-.015em;line-height:1.12;mar
 }
 .btn-call{background:var(--accent);color:#fff;border:1px solid transparent}
 .btn-call:hover{background:var(--accent-bright);color:#fff}
-.btn-ghost{background:var(--secondary);color:#fff;border:1px solid var(--secondary);font-weight:600;font-size:.98rem;min-height:50px}
+.btn-ghost{background:var(--secondary);color:#fff;border:1.5px solid var(--secondary);font-weight:700;font-size:1.05rem;min-height:56px}
 .btn-ghost:hover{background:#0D5A7E;color:#fff}
 @keyframes ssony-call-glow{
   0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,0),0 0 12px 1px rgba(200,16,46,.22)}
   50%{box-shadow:0 0 0 4px rgba(227,24,55,.12),0 0 26px 5px rgba(227,24,55,.4)}
 }
-.btn-call,.call-pill,.callbar a.cb-call{animation:ssony-call-glow 2.8s ease-in-out infinite;will-change:box-shadow}
-.callbar a.cb-call{animation-duration:3s}
+.btn-call{box-shadow:0 1px 2px rgba(11,29,58,.12)}
 @keyframes ssony-book-glow{
   0%,100%{box-shadow:0 0 0 0 rgba(15,102,144,0),0 0 12px 1px rgba(15,102,144,.22)}
   50%{box-shadow:0 0 0 4px rgba(15,102,144,.12),0 0 26px 5px rgba(15,102,144,.4)}
 }
-.btn-ghost,.book-pill,.callbar a.cb-book{animation:ssony-book-glow 2.8s ease-in-out infinite;will-change:box-shadow}
-.callbar a.cb-book{animation-duration:3s}
-@media (prefers-reduced-motion:reduce){
-  .btn-call,.call-pill,.callbar a.cb-call{animation:none;box-shadow:0 0 16px 3px rgba(200,16,46,.22)}
-  .btn-ghost,.book-pill,.callbar a.cb-book{animation:none;box-shadow:0 0 16px 3px rgba(15,102,144,.22)}
-}
-.hero-note{margin-top:16px;font-size:.84rem;line-height:1.55;color:var(--ink-faint)}
+
+.hero-note{margin-top:16px;font-size:.84rem;line-height:1.55;color:#000}
 .hero-walkin{font-size:.92rem;line-height:1.55;color:var(--ink-soft)}
 .hero-walkin strong{color:var(--ink);font-weight:600}
 .hero-note strong{color:var(--ink)}
+.copy > .hero-address{margin-top:14px}
+.hero-h1{margin-top:0}
+@media (min-width:700px){.hero-cta-mobile{display:none!important}}
+.hero-mobile-photo{display:block;width:calc(100vw - var(--sbw,0px));max-width:none;margin:20px 0 4px -20px}
+.hero-mobile-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 45%}
+@media (min-width:700px){.hero-mobile-photo img{aspect-ratio:auto;height:clamp(380px,44vw,620px)}}
+@media (min-width:700px){.hero-mobile-photo{margin:28px 0 8px -40px}}
+@media (min-width:1041px){.hero-mobile-photo{margin:32px 0 8px calc(-1*clamp(40px,6vw,80px))}}
 /* pushed below the first screen on purpose */
 .hero-more{margin-top:26px;padding-top:20px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:16px}
 .hero-address{display:flex;align-items:flex-start;gap:9px;font-style:normal;font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
@@ -578,7 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wordmark">Smile Services <span>of New York</span><span class="subname"><span class="u1">Urgent Care</span> <span class="u2">Dental</span> <span class="u1">Denture Repair</span></span></div>
   </div>
   <div class="topbar-actions">
-    <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar">Call (516) 500-7400</a>
+    <a class="call-pill" href="tel:5165007400" data-track="call" data-loc="topbar"><span class="pill-long">Call (516) 500-7400</span><span class="pill-short">Call Now</span></a>
     <a class="book-pill" href="#book" data-track="book" data-loc="topbar">Book Online</a>
   </div>
 </header>
@@ -589,36 +634,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-depth="hero">
     <div class="hero-grid">
       <div class="copy">
-        <p class="hero-kicker">Denture Repair in Manhasset. Repaired When We Can, Replaced Fast When We Can't.</p>
-        <h1>Broke Your Denture? <span class="danger">We'll Take a Look.</span></h1>
-        <div class="cta-row">
-          <a class="btn btn-call" href="#book" data-track="book" data-loc="hero">Book Your Consultation</a>
-          <a class="btn btn-ghost" href="tel:5165007400" data-track="call" data-loc="hero">Call (516) 500-7400</a>
+        <p class="hero-kicker">Same-Day Denture Repair</p>
+        <h1 class="hero-h1">Broke Your Denture? <span class="danger">We'll Take a Look.</span></h1>
+        <p class="hero-sub">Cracked, Chipped, or Snapped in Half? <span class="danger">Bring all the pieces.</span></p>
+        <div class="cta-row hero-cta-mobile" id="hero-ctas">
+          <a class="btn btn-call" href="tel:5165007400" data-track="call" data-loc="hero">Call (516) 500-7400</a>
+          <a class="btn btn-ghost" href="#book" data-track="book" data-loc="hero">Book Online</a>
         </div>
-        <p class="hero-note">Consultation, panoramic image and 3D CBCT scan included &middot; On-site dental lab &middot; 0% financing available</p>
-        <div class="hero-more">
-          <p class="hero-walkin"><strong>Bring the denture and all the pieces</strong> &middot; Free parking on site</p>
-          <address class="hero-address">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
-            <span>444 Community Drive, Suite 309 &middot; <span class="addr-city">Manhasset, NY 11030</span><br><span style="font-size:.92em">Serving Queens, Nassau County &amp; Suffolk County</span></span>
-          </address>
-          <div class="rating-row">
-            <span class="stars" role="img" aria-label="Rated 5 out of 5 on Google">
-            <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
-            <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
-            <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
-            <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
-            <svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg>
-            </span>
-            <span class="gsrc">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"></path><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"></path><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"></path><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"></path></svg>
-              Reviewed on Google
-            </span>
-          </div>
-        </div>
+        <p class="trust-row"><span>Free parking</span><span class="dot">&middot;</span><span class="tr-stars"><span class="stars" role="img" aria-label="Rated 5 out of 5 on Google"><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg viewBox="0 0 20 20" fill="#E0A100" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"></path><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"></path><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"></path><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"></path></svg><span>Google reviews</span></span></p>
       </div>
     </div>
   </section>
+
+  <!-- 1b · HERO CARDS -->
+  <div class="hero-cards">
+    <div class="hcard">
+      <h2>What's included in your visit</h2>
+      <ul>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Consultation, panoramic image + 3D CBCT scan</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>On-site dental lab for same-day repairs</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10.6l4 4 9-9.2" stroke="#0F6690" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Repaired when we can, replaced fast when we can't</li>
+      </ul>
+    </div>
+    <div class="hcard">
+      <h2>Find us</h2>
+      <address class="addr">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 6.2 12.3 6.5 12.6.3.3.8.3 1 0C12.8 21.3 19 14.2 19 9c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"></path></svg>
+        <span><span>444 Community Drive, Suite 309</span><b>Manhasset, NY 11030</b><small>Serving Queens, Nassau &amp; Suffolk County</small><small>Right off Exit 33 on the L.I.E.</small></span>
+      </address>
+      <p class="park"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#0F6690" stroke-width="1.8"></rect><path d="M9 17V7h3.8a3 3 0 0 1 0 6H9" fill="none" stroke="#0F6690" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Free parking on site</p>
+      <a class="dir" href="https://www.google.com/maps/dir//smile+services+of+new+york/@40.7736343,-73.7432809,13z" target="_blank" rel="noopener" data-track="directions">Get directions &rarr;</a>
+    </div>
+  </div>
 
   <!-- 2 · WHY US -->
   <section data-depth="relief">
@@ -1058,11 +1105,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<div class="callbar"><div class="callbar-inner"><a class="cb-book" href="#book" data-track="book" data-loc="sticky_bar">Book Online</a><a class="cb-call" href="tel:5165007400" data-track="call" data-loc="sticky_bar">Tap to Call</a></div></div>
+<div class="callbar" id="callbar"><div class="callbar-inner"><a class="cb-call" href="tel:5165007400" data-track="call" data-loc="sticky_bar">Tap to Call</a><a class="cb-book" href="#book" data-track="book" data-loc="sticky_bar">Book Online</a></div></div>
 
 <script>
 /* Reveal fail-open registered FIRST, before anything that could throw. */
 setTimeout(function(){ document.documentElement.classList.add('reveal-all'); }, 2500);
+(function(){
+  var bar = document.getElementById('callbar'), ctas = document.getElementById('hero-ctas'); if (!bar || !ctas) return;
+  function sync(){ bar.classList.toggle('show', ctas.getBoundingClientRect().bottom < 0); }
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ en.forEach(function(e){ bar.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.bottom < 0); }); }, {threshold:0}).observe(ctas);
+  } else { window.addEventListener('scroll', sync, {passive:true}); }
+  sync();
+})();
 
 (function(){
 
